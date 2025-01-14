@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IVM</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Instruction-Guided Visual Masking">
+    <meta name="keywords" content="MultiModal Instruction Following, Visual Grounding, Large MultiModal Models, Embodied AI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Instruction-Guided Visual Masking</title>
+
+    <!-- <link rel="icon" href="./assets/icon.png"> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./assets/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <script defer src="./assets/js/fontawesome.all.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+            More Research
+            </a>
+            <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://github.com/ZhengYinan-AIR/OMIGA">
+                <b>OMIGA</b> <p style="font-size:18px; display: inline; margin-left: 5px;"></p>
+            </a>
+            </a>
+            </div>
+        </div>
+        </div>
+    
+    </div>
+</nav> -->
+
+      
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title is-bold">
+                <!-- <img src="./assets/icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>  -->
+                <span class="mmmu" style="vertical-align: middle">Instruction-Guided Visual Masking</span>
+                </h1>
+            <!-- <h2 class="subtitle is-3 publication-subtitle">
+                Instruction-Guided Visual Masking
+                <br>
+                and Reasoning Benchmark for Expert AGI
+            </h2> -->
+            <div class="is-size-5 publication-authors">
+                <span class="author-block">Jinliang Zheng* <sup>†</sup> <sup style="color:#DC4437;">1</sup>,<sup style="color:#4385F5;">2</sup></span>
+                <span class="author-block">Jianxiong Li* <sup style="color:#DC4437;">1</sup> </span>
+                <span class="author-block">Sijie Cheng<sup style="color:#DC4437;">1</sup>,</span>
+                <span class="author-block">Yinan Zheng<sup style="color:#DC4437;">1</sup>,</span>
+                <span class="author-block">Jiaming Li<sup style="color:#DC4437;">1</sup>,</span>
+                <span class="author-block">Jihao Liu<sup style="color:#F5B400;">3</sup> <sup style="color:#4385F5;">2</sup>,</span><br>
+                <span class="author-block">Yu Liu<sup style="color:#4385F5;">2</sup>,</span>
+                <span class="author-block">Jingjing Liu<sup>✉</sup><sup style="color:#DC4437;">1</sup>,</span>
+                <span class="author-block">Xianyuan Zhan<sup>✉</sup> <sup style="color:#DC4437;">1</sup> <sup style="color:#f542dd;">4</sup>,</span>
+                
+            </div>
+            
+            <br>
+            
+            <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup style="color:#DC4437;">1</sup>AIR, Tsinghua University</span>
+                <span class="author-block"><sup style="color:#4385F5;">2</sup>SenseTime Research</span>
+                <span class="author-block"><sup style="color:#F5B400;">3</sup>CUHK MMLab</span>
+                <span class="author-block"><sup style="color:#f542dd;">4</sup>Shanghai AI Lab</span>
+            </div>
+    
+            <br>
+            <div class="is-size-5 publication-authors">
+                <span class="author-block">*Equal contribution, </span><br>
+                <span class="author-block">†Project Lead:</span>
+                <span class="author-block"><a href="mailto:zhengjl23@mails.tsinghua.edu.cn">zhengjl23@mails.tsinghua.edu.cn</a></span><br>
+                <span class="author-block">✉Corresponding author:</span>
+                <span class="author-block"><a href="mailto:zhanxianyuan@air.tsinghua.edu.cn">zhanxianyuan@air.tsinghua.edu.cn</a></span>
+            </div>
+            <style>
+              .accepted {
+                text-align: center;
+                color: #0a283d; /* Dark blue color */
+                font-size: 24px;
+                background-color: #e8f0fe79; /* Light blue background */
+                border: 1px solid #B6D4FE;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+            </style>
+
+            <div class="accepted">
+              <i class="fas fa-fire icon" style="color: red;"></i>
+              Exciting News! 
+              <div>Our paper has been accepted by NeurIPS-2024</div>
+            </div>
+
+            <div class="accepted">
+              <i class="fas fa-fire icon" style="color: red;"></i>
+               Exciting News! 
+               <div>Our paper has been selected as 
+                <span style="color: red; font-weight: bold;"> outstanding paper </span> 
+                at MFM-EAI workshop@ICML2024</div>
+            </div>
+
+            
+    
+            <div class="column has-text-centered">
+                <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2405.19783"
+                      class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Arxiv</span>
+                  </a>
+              </span>
+                <!-- <span class="link-block">
+                    <a href="https://openreview.net/forum?id=j5JvZCaDM0"
+                        class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Openreview</span>
+                    </a>
+                </span> -->
+                <!-- <span class="link-block">
+                    <a href="https://cloud.tsinghua.edu.cn/d/0d2939f7f7234cf68f1d/"
+                        class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <p style="font-size:18px">🔗</p>
+                    </span>
+                    <span>Dataset</span>
+                    </a>
+                </span> -->
+                <span class="link-block">
+                    <a href="https://github.com/2toinf/IVM"
+                        class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+
+                </div>
+    
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+    }
+</style>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video id="matting-video" autoplay muted controls playsinline width="100%" >
+        <source src="./assets/web/teaser.mp4" type="video/mp4">
+      </video> -->
+      <img src="./image/README/1716817940241.png" alt="Image" style="width: 100%;">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container" style="margin-bottom: 2vh;">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h1 class="title is-2">Abstraction</h1>
+          <div class="content has-text-justified">
+            <p>
+                Instruction following is crucial in contemporary LLM. However, when extended
+                to multimodal setting, it often suffers from misalignment between specific textual
+                instruction and targeted local region of an image. To achieve more accurate and
+                nuanced multimodal instruction following, we introduce Instruction-guided Visual
+                Masking (IVM), a new versatile visual grounding model that is compatible with
+                diverse multimodal models, such as LMM and robot model. By constructing
+                visual masks for instruction-irrelevant regions, IVM-enhanced multimodal models
+                can effectively focus on task-relevant image regions to better align with complex
+                instructions. Specifically, we design a visual masking data generation pipeline
+                and create an IVM-Mix-1M dataset with 1 million image-instruction pairs. We
+                further introduce a new learning technique, Discriminator Weighted Supervised
+                Learning (DWSL) for preferential IVM training that prioritizes high-quality data
+                samples. Experimental results on generic multimodal tasks such as VQA and
+                embodied robotic control demonstrate the versatility of IVM, which as a plugand-play tool, significantly boosts the performance of diverse multimodal models,
+                yielding new state-of-the-art results across challenging multimodal benchmarks.
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        
+        <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+            <h1 class="title is-2">Downstream Control Tasks Results</h1>
+          <div class="content has-text-justified">
+          <p>
+            IVM model proves valuable in
+            vision-language robotic manipulation tasks, where data collection is notoriously challenging and
+            generalization is a major concern. With the integration of IVM, our enhanced robot model
+            exhibits boosted performance and better generalization capabilities.
+        </p>
+        <div class="column">
+          <h2 style="text-align:left" class="title is-3">Results on Real Robots</h2>
+          <div class="content has-text-justified">
+          
+          <div class="content has-text-centered">
+            <img src="./image/robot_score.jpg" alt="algebraic reasoning" class="center">
+            <p><b><i>Figure 1:</i></b> Real robot LCBC experimental results. Success rate is averaged over 10 episodes and 3 seeds.</p>
+          </div>
+          <div class="column">
+            <h3 style="text-align:left" class="title is-4">Red cup on red plate</h3>
+            <div class="content has-text-justified">
+            </div>
+              <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
+                <source src="./image/video/redcup_redplate1.mp4"
+                        type="video/mp4">
+              </video>
+              <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
+                <source src="./image/video/redcup_redplate3.mp4"
+                        type="video/mp4">
+              </video>
+
+            </div>
+          <div class="column">
+            <h3 style="text-align:left" class="title is-4">Duck on green plate</h3>
+            <div class="content has-text-justified">
+            </div>
+              <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
+                <source src="./image/video/duck_greenplate1.mp4"
+                        type="video/mp4">
+              </video>
+              <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
+                <source src="./image/video/duck_greenplate2.mp4"
+                        type="video/mp4">
+              </video>
+
+            </div>
+           
+                <div class="column">
+                    <h3 style="text-align:left" class="title is-4">Red cup on sivler plate</h3>
+                    <div class="content has-text-justified">
+                    </div>
+                      <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
+                        <source src="./image/video/redcup_silverpan1.mp4"
+                                type="video/mp4">
+                      </video>
+                      <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
+                        <source src="./image/video/redcup_silverpan5.mp4"
+                                type="video/mp4">
+                      </video>
+        
+                    </div>
+            <div class="column">
+                <h3 style="text-align:left" class="title is-4">Duck in pot</h3>
+                <div class="content has-text-justified">
+                </div>
+                  <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
+                    <source src="./image/video/duck_pot1.mp4"
+                            type="video/mp4">
+                  </video>
+                  <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
+                    <source src="./image/video/duck_pot2.mp4"
+                            type="video/mp4">
+                  </video>
+    
+                </div>
+
+
+
+
+        
+
+                  </div>
+                </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <h2 style="text-align:left" class="title is-3">Results on VQA-type benchmarks</h2>
+
+        <h3 style="text-align:left" class="title is-4">V* bench and visualization results</h3>
+            <div class="content has-text-justified">
+                <p>
+                    We evaluate IVM-enhanced GPT4-V on
+                    V*bench, a recently proposed challenging VQA-type benchmark characterized by images with
+                    abundant redundancies. Results are presented in Table 1. The accuracy of the vanilla GPT4-V is
+                    mediocre (55.0%). Our IVM model, however, can significantly improve the performance (+26.2%). 
+                    Except for the reported score, we provide more visualization results.
+            </p>
+            </div>
+            <img src="./image/vqa_result.png" alt="Image" style="width: 35%;">
+            <img src="./image/Goodcase.png" alt="Image" style="width: 60%;">
+        
+      
+      </div>
+</section>    
+
+
+
+
+<!-- <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Feasibility-Guided Diffusion Model</h2>
+          <div class="content has-text-justified">
+          <p>
+            We propose a feasibility-dependent objective, i.e., 
+            <b>maximizing reward value within the feasible region while minimizing safety risks in the infeasible region</b>.
+            In FISOR, the optimal policy for the optimization problem can be derived in a special form of weighted behavior cloning.
+            Moreover, we propose a novel energy-guided sampling method that <b>does not require training a complicated time-dependent classifier</b> to simplify the training. <b>No more Lagrangian.</b>
+            
+            </p>
+          <div class="content has-text-centered">
+            <img src="./assets/framework.jpg" alt="algebraic reasoning" class="center">
+            <p><b><i>Figure 2:</i></b> Feasibility-guided diffusion model with time-independent classifier-guided sampling method.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+
+</section>     -->
+
+
+
+<!-- @PAN TODO: bibtex -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3 has-text-centered">BibTeX</h2>
+      <pre><code>
+       @article{zheng2024instruction,
+        title={Instruction-Guided Visual Masking},
+        author={Zheng, Jinliang and Li, Jianxiong and Cheng, Sijie and Zheng, Yinan and Li, Jiaming and Liu, Jihao and Liu, Yu and Liu, Jingjing and Zhan, Xianyuan},
+        journal={arXiv preprint arXiv:2405.19783},
+        year={2024}
+      }
+  </code></pre>
+    </div>
+</section>
+  
+<footer class="footer">
+<!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+    <div class="column is-8">
+        <div class="content has-text-centered">
+        <p>
+            This website is website adapted from <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+        </div>
+    </div>
+    </div>
+<!-- </div> -->
+
+</footer>
+
+
+</body>
