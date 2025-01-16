@@ -1,406 +1,312 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IVM</title>
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <meta charset="utf-8">
-    <meta name="description"
-        content="Instruction-Guided Visual Masking">
-    <meta name="keywords" content="MultiModal Instruction Following, Visual Grounding, Large MultiModal Models, Embodied AI">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Instruction-Guided Visual Masking</title>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
 
-    <!-- <link rel="icon" href="./assets/icon.png"> -->
 
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="./assets/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./assets/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="./assets/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <script defer src="./assets/js/fontawesome.all.min.js"></script>
+  <title>Academic Project Page</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
 
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
-
 <body>
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        </a>
-    </div>
-    <div class="navbar-menu">
-        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-        <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-            More Research
-            </a>
-            <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://github.com/ZhengYinan-AIR/OMIGA">
-                <b>OMIGA</b> <p style="font-size:18px; display: inline; margin-left: 5px;"></p>
-            </a>
-            </a>
-            </div>
-        </div>
-        </div>
-    
-    </div>
-</nav> -->
 
-      
-<section class="hero">
+  <section class="hero">
     <div class="hero-body">
-        <div class="container is-max-desktop">
+      <div class="container is-max-desktop">
         <div class="columns is-centered">
-            <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title is-bold">
-                <!-- <img src="./assets/icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>  -->
-                <span class="mmmu" style="vertical-align: middle">Instruction-Guided Visual Masking</span>
-                </h1>
-            <!-- <h2 class="subtitle is-3 publication-subtitle">
-                Instruction-Guided Visual Masking
-                <br>
-                and Reasoning Benchmark for Expert AGI
-            </h2> -->
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Academic Project Page</h1>
             <div class="is-size-5 publication-authors">
-                <span class="author-block">Jinliang Zheng* <sup>†</sup> <sup style="color:#DC4437;">1</sup>,<sup style="color:#4385F5;">2</sup></span>
-                <span class="author-block">Jianxiong Li* <sup style="color:#DC4437;">1</sup> </span>
-                <span class="author-block">Sijie Cheng<sup style="color:#DC4437;">1</sup>,</span>
-                <span class="author-block">Yinan Zheng<sup style="color:#DC4437;">1</sup>,</span>
-                <span class="author-block">Jiaming Li<sup style="color:#DC4437;">1</sup>,</span>
-                <span class="author-block">Jihao Liu<sup style="color:#F5B400;">3</sup> <sup style="color:#4385F5;">2</sup>,</span><br>
-                <span class="author-block">Yu Liu<sup style="color:#4385F5;">2</sup>,</span>
-                <span class="author-block">Jingjing Liu<sup>✉</sup><sup style="color:#DC4437;">1</sup>,</span>
-                <span class="author-block">Xianyuan Zhan<sup>✉</sup> <sup style="color:#DC4437;">1</sup> <sup style="color:#f542dd;">4</sup>,</span>
-                
-            </div>
-            
-            <br>
-            
-            <div class="is-size-5 publication-authors">
-                <span class="author-block"><sup style="color:#DC4437;">1</sup>AIR, Tsinghua University</span>
-                <span class="author-block"><sup style="color:#4385F5;">2</sup>SenseTime Research</span>
-                <span class="author-block"><sup style="color:#F5B400;">3</sup>CUHK MMLab</span>
-                <span class="author-block"><sup style="color:#f542dd;">4</sup>Shanghai AI Lab</span>
-            </div>
-    
-            <br>
-            <div class="is-size-5 publication-authors">
-                <span class="author-block">*Equal contribution, </span><br>
-                <span class="author-block">†Project Lead:</span>
-                <span class="author-block"><a href="mailto:zhengjl23@mails.tsinghua.edu.cn">zhengjl23@mails.tsinghua.edu.cn</a></span><br>
-                <span class="author-block">✉Corresponding author:</span>
-                <span class="author-block"><a href="mailto:zhanxianyuan@air.tsinghua.edu.cn">zhanxianyuan@air.tsinghua.edu.cn</a></span>
-            </div>
-            <style>
-              .accepted {
-                text-align: center;
-                color: #0a283d; /* Dark blue color */
-                font-size: 24px;
-                background-color: #e8f0fe79; /* Light blue background */
-                border: 1px solid #B6D4FE;
-                border-radius: 10px;
-                padding: 20px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            }
-            </style>
-
-            <div class="accepted">
-              <i class="fas fa-fire icon" style="color: red;"></i>
-              Exciting News! 
-              <div>Our paper has been accepted by NeurIPS-2024</div>
-            </div>
-
-            <div class="accepted">
-              <i class="fas fa-fire icon" style="color: red;"></i>
-               Exciting News! 
-               <div>Our paper has been selected as 
-                <span style="color: red; font-weight: bold;"> outstanding paper </span> 
-                at MFM-EAI workshop@ICML2024</div>
-            </div>
-
-            
-    
-            <div class="column has-text-centered">
-                <div class="publication-links">
-                <!-- PDF Link. -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2405.19783"
-                      class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
                   </span>
-                  <span>Arxiv</span>
-                  </a>
-              </span>
-                <!-- <span class="link-block">
-                    <a href="https://openreview.net/forum?id=j5JvZCaDM0"
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
                         <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Openreview</span>
+                      </span>
+                      <span>Supplementary</span>
                     </a>
-                </span> -->
-                <!-- <span class="link-block">
-                    <a href="https://cloud.tsinghua.edu.cn/d/0d2939f7f7234cf68f1d/"
-                        class="external-link button is-normal is-rounded is-dark">
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                        <p style="font-size:18px">🔗</p>
-                    </span>
-                    <span>Dataset</span>
-                    </a>
-                </span> -->
-                <span class="link-block">
-                    <a href="https://github.com/2toinf/IVM"
-                        class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fab fa-github"></i>
+                      <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
-                    </a>
+                  </a>
                 </span>
 
-                </div>
-    
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
             </div>
-            </div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
+  </div>
 </section>
-<style>
-    .center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 80%;
-    }
-</style>
 
+
+<!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- <video id="matting-video" autoplay muted controls playsinline width="100%" >
-        <source src="./assets/web/teaser.mp4" type="video/mp4">
-      </video> -->
-      <img src="./image/README/1716817940241.png" alt="Image" style="width: 100%;">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
     </div>
   </div>
 </section>
+<!-- End teaser video -->
 
-<section class="section">
-    <div class="container" style="margin-bottom: 2vh;">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h1 class="title is-2">Abstraction</h1>
-          <div class="content has-text-justified">
-            <p>
-                Instruction following is crucial in contemporary LLM. However, when extended
-                to multimodal setting, it often suffers from misalignment between specific textual
-                instruction and targeted local region of an image. To achieve more accurate and
-                nuanced multimodal instruction following, we introduce Instruction-guided Visual
-                Masking (IVM), a new versatile visual grounding model that is compatible with
-                diverse multimodal models, such as LMM and robot model. By constructing
-                visual masks for instruction-irrelevant regions, IVM-enhanced multimodal models
-                can effectively focus on task-relevant image regions to better align with complex
-                instructions. Specifically, we design a visual masking data generation pipeline
-                and create an IVM-Mix-1M dataset with 1 million image-instruction pairs. We
-                further introduce a new learning technique, Discriminator Weighted Supervised
-                Learning (DWSL) for preferential IVM training that prioritizes high-quality data
-                samples. Experimental results on generic multimodal tasks such as VQA and
-                embodied robotic control demonstrate the versatility of IVM, which as a plugand-play tool, significantly boosts the performance of diverse multimodal models,
-                yielding new state-of-the-art results across challenging multimodal benchmarks.
-            </p>
-          </div>
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+          </p>
         </div>
       </div>
+    </div>
   </div>
 </section>
+<!-- End paper abstract -->
 
 
-<section class="section">
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
     <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
-        
-        <!-- <div class="column is-full-width has-text-centered"> -->
         <div class="column is-four-fifths">
-            <h1 class="title is-2">Downstream Control Tasks Results</h1>
-          <div class="content has-text-justified">
-          <p>
-            IVM model proves valuable in
-            vision-language robotic manipulation tasks, where data collection is notoriously challenging and
-            generalization is a major concern. With the integration of IVM, our enhanced robot model
-            exhibits boosted performance and better generalization capabilities.
-        </p>
-        <div class="column">
-          <h2 style="text-align:left" class="title is-3">Results on Real Robots</h2>
-          <div class="content has-text-justified">
           
-          <div class="content has-text-centered">
-            <img src="./image/robot_score.jpg" alt="algebraic reasoning" class="center">
-            <p><b><i>Figure 1:</i></b> Real robot LCBC experimental results. Success rate is averaged over 10 episodes and 3 seeds.</p>
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
-          <div class="column">
-            <h3 style="text-align:left" class="title is-4">Red cup on red plate</h3>
-            <div class="content has-text-justified">
-            </div>
-              <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
-                <source src="./image/video/redcup_redplate1.mp4"
-                        type="video/mp4">
-              </video>
-              <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
-                <source src="./image/video/redcup_redplate3.mp4"
-                        type="video/mp4">
-              </video>
-
-            </div>
-          <div class="column">
-            <h3 style="text-align:left" class="title is-4">Duck on green plate</h3>
-            <div class="content has-text-justified">
-            </div>
-              <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
-                <source src="./image/video/duck_greenplate1.mp4"
-                        type="video/mp4">
-              </video>
-              <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
-                <source src="./image/video/duck_greenplate2.mp4"
-                        type="video/mp4">
-              </video>
-
-            </div>
-           
-                <div class="column">
-                    <h3 style="text-align:left" class="title is-4">Red cup on sivler plate</h3>
-                    <div class="content has-text-justified">
-                    </div>
-                      <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
-                        <source src="./image/video/redcup_silverpan1.mp4"
-                                type="video/mp4">
-                      </video>
-                      <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
-                        <source src="./image/video/redcup_silverpan5.mp4"
-                                type="video/mp4">
-                      </video>
-        
-                    </div>
-            <div class="column">
-                <h3 style="text-align:left" class="title is-4">Duck in pot</h3>
-                <div class="content has-text-justified">
-                </div>
-                  <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
-                    <source src="./image/video/duck_pot1.mp4"
-                            type="video/mp4">
-                  </video>
-                  <video id="dollyzoom" autoplay controls muted loop playsinline width="48%" height="100%">
-                    <source src="./image/video/duck_pot2.mp4"
-                            type="video/mp4">
-                  </video>
-    
-                </div>
-
-
-
-
-        
-
-                  </div>
-                </div>
-        </div>
         </div>
       </div>
-
-      <div class="column">
-        <h2 style="text-align:left" class="title is-3">Results on VQA-type benchmarks</h2>
-
-        <h3 style="text-align:left" class="title is-4">V* bench and visualization results</h3>
-            <div class="content has-text-justified">
-                <p>
-                    We evaluate IVM-enhanced GPT4-V on
-                    V*bench, a recently proposed challenging VQA-type benchmark characterized by images with
-                    abundant redundancies. Results are presented in Table 1. The accuracy of the vanilla GPT4-V is
-                    mediocre (55.0%). Our IVM model, however, can significantly improve the performance (+26.2%). 
-                    Except for the reported score, we provide more visualization results.
-            </p>
-            </div>
-            <img src="./image/vqa_result.png" alt="Image" style="width: 35%;">
-            <img src="./image/Goodcase.png" alt="Image" style="width: 60%;">
-        
-      
-      </div>
-</section>    
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
 
 
-
-
-<!-- <section class="section">
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
     <div class="container">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-            <h2 class="title is-3">Feasibility-Guided Diffusion Model</h2>
-          <div class="content has-text-justified">
-          <p>
-            We propose a feasibility-dependent objective, i.e., 
-            <b>maximizing reward value within the feasible region while minimizing safety risks in the infeasible region</b>.
-            In FISOR, the optimal policy for the optimization problem can be derived in a special form of weighted behavior cloning.
-            Moreover, we propose a novel energy-guided sampling method that <b>does not require training a complicated time-dependent classifier</b> to simplify the training. <b>No more Lagrangian.</b>
-            
-            </p>
-          <div class="content has-text-centered">
-            <img src="./assets/framework.jpg" alt="algebraic reasoning" class="center">
-            <p><b><i>Figure 2:</i></b> Feasibility-guided diffusion model with time-independent classifier-guided sampling method.</p>
-          </div>
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
         </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
 
-</section>     -->
 
 
 
-<!-- @PAN TODO: bibtex -->
-<section class="section" id="BibTeX">
+
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title is-3 has-text-centered">BibTeX</h2>
-      <pre><code>
-       @article{zheng2024instruction,
-        title={Instruction-Guided Visual Masking},
-        author={Zheng, Jinliang and Li, Jianxiong and Cheng, Sijie and Zheng, Yinan and Li, Jiaming and Liu, Jihao and Liu, Yu and Liu, Jingjing and Zhan, Xianyuan},
-        journal={arXiv preprint arXiv:2405.19783},
-        year={2024}
-      }
-  </code></pre>
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
     </div>
 </section>
-  
-<footer class="footer">
-<!-- <div class="container"> -->
-    <div class="content has-text-centered">
-    </div>
-    <div class="columns is-centered">
-    <div class="column is-8">
-        <div class="content has-text-centered">
-        <p>
-            This website is website adapted from <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-        </p>
-        </div>
-    </div>
-    </div>
-<!-- </div> -->
+<!--End BibTex citation -->
 
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
-</body>
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
