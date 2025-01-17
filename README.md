@@ -1,6 +1,6 @@
 # UniAct
 
-[[Project Page](https://2toinf.github.io/DecisionNCE/)] 
+[[Project Page](https://2toinf.github.io/UniAct/)] 
 
 ## Introduction
 
