@@ -1,312 +1,793 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ModularBot - Your Customizable Robot Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet" />
+  <script
+    src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+  <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000"
+    data-border-radius="small"></script>
 </head>
-<body>
+
+<body class="font-[Poppins] bg-gray-50">
+
+  <main>
+    <section
+      class="relative bg-white overflow-hidden bg-[url(&#39;https://ai-public.creatie.ai/gen_page/subtle_grid_pattern.png&#39;)] bg-opacity-5">
+      <div class="max-w-8xl mx-auto">
+        <div class="relative z-10 pb-8 bg-transparent sm:pb-16 md:pb-20 lg:pb-28 lg:w-full">
+          <div class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6">
+            <div class="text-center">
+              <h1 class="text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">
+                <span class="block text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">Universal
+                  Actions for Enhanced Embodied Foundation Models</span>
+              </h1>
+              <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"></p>
+              <div class="flex justify-center gap-4 mt-6">
+                <a href="#"
+                  class="!rounded-button inline-flex items-center px-6 py-2 border border-custom text-base font-medium text-custom bg-white hover:bg-gray-50">
+                  <i class="fas fa-file-alt mr-2"></i>Paper</a>
+                <a href="#"
+                  class="!rounded-button inline-flex items-center px-6 py-2 border border-custom text-base font-medium text-custom bg-white hover:bg-gray-50">
+                  <i class="fas fa-code mr-2"></i>Code</a>
+                <a href="#"
+                  class="!rounded-button inline-flex items-center px-6 py-2 border border-custom text-base font-medium text-custom bg-white hover:bg-gray-50">
+                  <i class="fas fa-cube mr-2"></i>Models</a>
+              </div>
 
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+              <div
+                class="mt-3 max-w-4xl mx-auto text-base text-gray-600 sm:text-lg md:mt-5 md:text-xl order-last flex flex-col items-center">
+                <p class="mb-4">
+                  <a href='#' class="hover:text-custom"> Jinliang Zheng </a> <sup>1,2,*</sup>,
+                  Jianxiong Li<sup>1,*</sup>,
+                  Dongxiu Liu<sup>3</sup>,
+                  Yinan Zheng<sup>1</sup>,
+                  Zhihao Wang<sup>4</sup>,
+                  Zhonghong Ou<sup>1</sup>,
+                  Yu Liu<sup>2</sup>,
+                  Jingjing Liu<sup>1</sup>,
+                  Ya-Qin Zhang<sup>1</sup>,
+                  Xianyuan Zhan<sup>1,5,†</sup>
+                </p>
+                <p class="text-sm text-gray-500">
+                  <sup>1</sup>AIR, Tsinghua University<br />
+                  <sup>2</sup>SenseTime Research<br />
+                  <sup>3</sup>Beijing University of Posts and Telecommunications<br />
+                  <sup>4</sup>Peking University<br />
+                  <sup>5</sup>Shanghai AI Lab<br />
+                  <sup>*</sup>
+                  Equal contribution<sup>†</sup>Corresponding authors
+                </p>
+                <div class="grid grid-cols-5 gap-8 items-center justify-items-center mt-8 w-full">
+                  <img src="static/images/Tsinghua_University_Logo.png" alt="Tsinghua University"
+                    class="h-16 object-contain hover:grayscale-0 transition-all" />
+                  <img src="static/images/sensetime_logo.png" alt="SenseTime"
+                    class="h-16 object-contain hover:grayscale-0 transition-all" />
+                  <img src="static/images/bupt.png" alt="BUPT"
+                    class="h-16 object-contain hover:grayscale-0 transition-all" />
+                  <img src="static/images/peking_university.png" alt="Peking University"
+                    class="h-16 object-contain hover:grayscale-0 transition-all" />
+                  <img src="static/images/ShanghaiAI.png" alt="Shanghai AI Lab"
+                    class="h-16 object-contain hover:grayscale-0 transition-all" />
+                </div>
+              </div>
+              <p></p>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+              <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 mt-8 order-first">
+                <!-- <div class="lg:pr-8"><img src="static/images/robot.png" alt="UniAct Model" class="w-full rounded-lg shadow-lg" /></div> -->
+                <div class="lg:pl-8">
+                  <p class="text-left text-gray-600">
+                    Training on diverse, internet-scale data is a key factor in the success of recent large foundation
+                    models.
+                    Yet, using the same recipe for building embodied agents has faced noticeable difficulties.
+                    Despite the availability of many crowd-sourced embodied datasets,
+                    their action spaces often exhibit significant heterogeneity due to distinct physical embodiment and
+                    control interfaces for different robots,
+                    causing substantial challenges in developing embodied foundation models using cross-embodiment data.
+                    In this paper, we introduce UniAct, a new embodied foundation modeling framework operating in the
+                    Universal Action Space.
+                    Our learned universal actions capture the generic behaviors across diverse robots by exploiting
+                    their shared structural features,
+                    and enable enhanced cross-domain data utilization and cross-embodiment generalizations by
+                    eliminating the notorious heterogeneity.
+                    Moreover, the universal actions can be efficiently translated back to heterogeneous actionable
+                    commands by simply adding embodiment-specific details,
+                    from which fast adaptation to new robots becomes simple and straightforward.
+                    Our 0.5B instantiation of UniAct outperforms 14X larger SOTA embodied foundation models in extensive
+                    evaluations on various real-world and simulation robots,
+                    showcasing exceptional cross-embodiment control and adaptation capability, highlighting the crucial
+                    benefit of adopting universal actions.</p>
+                </div>
+              </div>
+              <p></p>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
             </div>
           </div>
+
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+    </section>
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Play with Code!</h2>
+          <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto mt-4">Although universal actions represent highly
+            abstract embodiment-agnostic intentions, we can observe fascinating consistencies in how these
+            actions manifest across different embodiments. Try it yourself!</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+        <div class="flex justify-center gap-4 mb-8">
+          <button
+            class="px-6 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-custom focus:ring-offset-2 video-switch-btn"
+            data-group="1">Move Down</button>
+          <button
+            class="px-6 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-custom focus:ring-offset-2 video-switch-btn"
+            data-group="2">Move Upward</button>
+          <button
+            class="px-6 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-custom focus:ring-offset-2 video-switch-btn"
+            data-group="3">Move Right</button>
+          <button
+            class="px-6 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-custom focus:ring-offset-2 video-switch-btn"
+            data-group="4">Move Left</button>
+          <button
+            class="px-6 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-custom focus:ring-offset-2 video-switch-btn"
+            data-group="5">Close the gripper</button>
+        </div>
+        <div class="flex justify-center grid-cols-1 md:grid-cols-3 gap-8">
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+          <div class="video-container group-1">
+            <video src="static/videos/code/down/widowx.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop" >
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">WidowX Robot in real world</p>
+          </div>
+          <div class="video-container group-1">
+            <video src="static/videos/code/down/libero.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop">
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">Franka Robot in simulation</p>
+          </div>
+          <div class="video-container group-1">
+            <video src="static/videos/code/down/airbot.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop">
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">AIRBOT in real world-few shot adaptation</p>
+          </div>
 
 
+          <div class="video-container group-2" style="display: none;">
+            <video src="static/videos/code/lift/widowx.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop" >
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">WidowX Robot in real world</p>
+          </div>
+          <div class="video-container group-2" style="display: none;">
+            <video src="static/videos/code/lift/libero.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop">
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">Franka Robot in simulation</p>
+          </div>
+          <div class="video-container group-2" style="display: none;">
+            <video src="static/videos/code/lift/airbot.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop">
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">AIRBOT in real world-few shot adaptation</p>
+          </div>
 
 
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+          <div class="video-container group-3" style="display: none;">
+            <video src="static/videos/code/right/widowx.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop" >
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">WidowX Robot in real world</p>
+          </div>
+          <div class="video-container group-3" style="display: none;">
+            <video src="static/videos/code/right/libero.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop">
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">Franka Robot in simulation</p>
+          </div>
+          <div class="video-container group-3" style="display: none;">
+            <video src="static/videos/code/right/airbot.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop">
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">AIRBOT in real world-few shot adaptation</p>
+          </div>
+
+
+          <div class="video-container group-4" style="display: none;">
+            <video src="static/videos/code/left/widowx.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop" >
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">WidowX Robot in real world</p>
+          </div>
+          <div class="video-container group-4" style="display: none;">
+            <video src="static/videos/code/left/libero.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop">
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">Franka Robot in simulation</p>
+          </div>
+          <div class="video-container group-4" style="display: none;">
+            <video src="static/videos/code/left/airbot.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop">
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">AIRBOT in real world-few shot adaptation</p>
+          </div>
+
+          <div class="video-container group-5" style="display: none;">
+            <video src="static/videos/code/close/widowx.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop" >
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">WidowX Robot in real world</p>
+          </div>
+          <div class="video-container group-5" style="display: none;">
+            <video src="static/videos/code/close/libero.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop">
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">Franka Robot in simulation</p>
+          </div>
+          <div class="video-container group-5" style="display: none;">
+            <video src="static/videos/code/close/airbot.mp4"
+              class="w-full aspect-video object-cover rounded-lg shadow-lg" controls="controls" autoplay="autoplay" loop="loop">
+              <source type="video/mp4" />
+            </video>
+            <p class="mt-2 text-sm text-gray-600 text-center">AIRBOT in real world-few shot adaptation</p>
+          </div>
+
           
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+    </section>
+    <section class="py-16 bg-white">
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-gray-900">Generalized Cross-Embodiment Policy in Universal Action Space</h2>
+          <p class="mt-4 text-lg text-gray-500">Explore the potential of universal action in more embodiments!</p>
+        </div>
+        
+
+        <div class="flex justify-center md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8" id="slider-dots">
+
+            <div
+          class="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow h-full">
+            <img src="static/images/widowx.png"
+                class="w-full h-64 object-cover rounded-xl shadow-lg mb-4 hover:transform hover:scale-105 transition-transform duration-300" />
+                
+                <button
+                class="px-6 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-colors font-medium shadow-md hover:shadow-lg mt-auto" data-slide="0">
+                Watch Demo!
+              </button>
+            </div>
+
+            <div
+            class="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow h-full">
+              <img src="static/images/franka.png" 
+                  class="w-full h-64 object-cover rounded-xl shadow-lg mb-4 hover:transform hover:scale-105 transition-transform duration-300" />
+                  
+                  <button
+                  class="px-6 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-colors font-medium shadow-md hover:shadow-lg mt-auto" data-slide="3">
+                  Watch Demo!
+                </button>
+              </div>
+
+
+          <div
+            class="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow h-full">
+              <img src="static/images/airbot.png" 
+                  class="w-full h-64 object-cover rounded-xl shadow-lg mb-4 hover:transform hover:scale-105 transition-transform duration-300" />
+                  
+                  <button
+                  class="px-6 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-colors font-medium shadow-md hover:shadow-lg mt-auto" data-slide="12">
+                  Watch Demo!
+                </button>
+            </div>
+
+
+            <div
+            class="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow h-full">
+              <img src="static/images/airbot_dual.png" 
+                  class="w-full h-64 object-cover rounded-xl shadow-lg mb-4 hover:transform hover:scale-105 transition-transform duration-300" />
+                  
+                  <button
+                  class="px-6 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-colors font-medium shadow-md hover:shadow-lg mt-auto" data-slide="17">
+                  Watch Demo!
+                </button>
+            </div>
+            <div
+            class="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow h-full">
+              <img src="static/images/coming_soon.png"
+                  class="w-full h-64 object-cover rounded-xl shadow-lg mb-4 hover:transform hover:scale-105 transition-transform duration-300" />
+    
+            </div>
+
+        </div>
+
+
+        <div class=" relative">
+
+          
+
+          <div class="flex justify-center overflow-hidden relative">
+            <div class="flex gap-4 transition-transform duration-500 ease-in-out transform w-full" id="slider-container"
+              style="display: flex; gap: 1rem; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); touch-action: pan-y pinch-zoom;">
+
+                
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/widowx/1.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+                  <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white rounded-b-lg">
+                    <h3 class="text-lg font-semibold">put the eggplant into the pot</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/widowx/6.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+                  <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white rounded-b-lg">
+                    <h3 class="text-lg font-semibold">flip the pot</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/widowx/7.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+                  <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white rounded-b-lg">
+                    <h3 class="text-lg font-semibold">lift AAA battery</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/widowx/8.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+                  <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white rounded-b-lg">
+                    <h3 class="text-lg font-semibold">Put the toy man in the sink</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/widowx/9.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+                  <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white rounded-b-lg">
+                    <h3 class="text-lg font-semibold">Put the corn in the pot</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/widowx/10.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+                  <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white rounded-b-lg">
+                    <h3 class="text-lg font-semibold">Put the eggplant in the pot</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/libero/1.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+
+                </div>
+              </div>
+
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/libero/2.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+
+                </div>
+              </div>
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/libero/3.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+
+                </div>
+              </div>
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/libero/4.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+
+                </div>
+              </div>
+              
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/libero/6.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+                </div>
+              </div>
+
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/airbot/1.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+
+                </div>
+              </div>
+
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/airbot/2.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+
+                </div>
+              </div>
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/airbot/5.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+
+                </div>
+              </div>
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/airbot/3.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+
+                </div>
+              </div>
+
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/airbot/4.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+
+                </div>
+              </div>
+              
+              <div class="min-w-[calc(25%-1rem)] flex-shrink-0">
+                <div class="relative"><img src="static/videos/airbot/6.gif"
+                    class="w-full h-[400px] object-cover rounded-lg" alt="Project 1" />
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <button
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100"
+            onclick="slideLeft()">
+            <i class="fas fa-chevron-left text-gray-600"></i></button>
+          <button
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100"
+            onclick="slideRight()">
+            <i class="fas fa-chevron-right text-gray-600"></i></button>
+          
+            
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-gray-900">Methods</h2>
+          <p class="mt-4 text-lg text-gray-500">Our approach consists of the following key components</p>
+        </div>
+        <div class="mt-12 grid grid-cols-1 gap-8">
+          <div class="bg-white rounded-lg shadow-sm overflow-hidden col-span-2">
+            <div class="p-6 flex flex-col items-center">
+              <div class="max-w-4xl bg-gray-100 rounded-lg overflow-hidden mb-6">
+                <img src="static/images/intro_final.jpg" alt="Grabber Arm" class="w-full object-cover" />
+              </div>
+              <h3 class="mt-4 text-lg font-medium text-gray-900">Universal Action Space</h3>
+              <p class="mt-2 text-sm text-gray-500">Our novel approach to unifying robot control across different
+                embodiments through a shared action representation</p>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+    <section class="py-16 bg-white" id="results-section">
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Experimental Results</h2>
+          <p class="mt-4 text-lg text-gray-500">Comprehensive evaluation across different platforms and tasks</p>
+        </div>
+        <div class="space-y-12">
+          <div class="overflow-x-auto">
+            <h3 class="text-xl font-semibold mb-4">Results on WindoX (Real World)</h3>
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Model</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Visual Generalization                  </th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Motion Generalization                  </th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Physical Generalization
+                  </th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Semantic Generalization
+                  </th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Language Grounding
+                  </th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Average                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">Octo</td>
+                  <td class="px-6 py-4">24.0</td>
+                  <td class="px-6 py-4">30.0</td>
+                  <td class="px-6 py-4">10.0</td>
+                  <td class="px-6 py-4">19.4</td>
+                  <td class="px-6 py-4">48.3</td>
+                  <td class="px-6 py-4">28.9</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">OpenVLA-7B</td>
+                  <td class="px-6 py-4">66.0</td>
+                  <td class="px-6 py-4">35.0</td>
+                  <td class="px-6 py-4">60.0</td>
+                  <td class="px-6 py-4">48.1</td>
+                  <td class="px-6 py-4">88.3</td>
+                  <td class="px-6 py-4">65.1</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap font-semibold">UniAct-0.5B(Ours)</td>
+                  <td class="px-6 py-4 font-semibold text-custom">69.0</td>
+                  <td class="px-6 py-4 font-semibold text-custom">66.0</td>
+                  <td class="px-6 py-4 font-semibold text-custom">70.0</td>
+                  <td class="px-6 py-4 font-semibold text-custom">38.8</td>
+                  <td class="px-6 py-4 font-semibold text-custom">73.3</td>
+                  <td class="px-6 py-4 font-semibold text-custom">63.3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="overflow-x-auto">
+
+
+            <h3 class="text-xl font-semibold mb-4">Results on Franka (Simulation)</h3>
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Model</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LIBERO-Spatial</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LIBERO-Object</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LIBERO-Goal</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LIBERO-Long</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LIBERO-90</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Average</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">Octo</td>
+                  <td class="px-6 py-4">17.5</td>
+                  <td class="px-6 py-4">12.0</td>
+                  <td class="px-6 py-4">36.5</td>
+                  <td class="px-6 py-4">20.0</td>
+                  <td class="px-6 py-4">32.5</td>
+                  <td class="px-6 py-4">27.7</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">OpenVLA-7B</td>
+                  <td class="px-6 py-4">43.0</td>
+                  <td class="px-6 py-4">66.5</td>
+                  <td class="px-6 py-4">54.5</td>
+                  <td class="px-6 py-4">13.0</td>
+                  <td class="px-6 py-4">44.1</td>
+                  <td class="px-6 py-4">44.1</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap font-semibold">UniAct-0.5B(Ours)</td>
+                  <td class="px-6 py-4 font-semibold text-custom">64.5</td>
+                  <td class="px-6 py-4 font-semibold text-custom">77.5</td>
+                  <td class="px-6 py-4 font-semibold text-custom">68.0</td>
+                  <td class="px-6 py-4 font-semibold text-custom">46.5</td>
+                  <td class="px-6 py-4 font-semibold text-custom">60.0</td>
+                  <td class="px-6 py-4 font-semibold text-custom">61.3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="overflow-x-auto">
+
+
+            <h3 class="text-xl font-semibold mb-4">Results on AIRBOT with different control interfaces(Fast Adaption)</h3>
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Model</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Relative EEF Position(easy/hard task)</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Relative Joint Position(easy/hard task)</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Absolute EEF Position(easy/hard task)</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Absolute Joint Position(easy/hard task)</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">Octo</td>
+                  <td class="px-6 py-4">5.0 / 12.5</td>
+                  <td class="px-6 py-4">22.5 / 17.5</td>
+                  <td class="px-6 py-4">2.5 / 0.0</td>
+                  <td class="px-6 py-4">0.0 / 0.0</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">OpenVLA-7B</td>
+                  <td class="px-6 py-4">32.5 / 22.5</td>
+                  <td class="px-6 py-4">17.5 / 2.5</td>
+                  <td class="px-6 py-4">32.5 / 15.0</td>
+                  <td class="px-6 py-4">2.5 / 7.5</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap font-semibold">UniAct-0.5B(Ours)</td>
+                  <td class="px-6 py-4 font-semibold text-custom">57.5 / 40.0</td>
+                  <td class="px-6 py-4 font-semibold text-custom">47.5 / 45.0</td>
+                  <td class="px-6 py-4 font-semibold text-custom">52.5 / 30.0</td>
+                  <td class="px-6 py-4 font-semibold text-custom">70.0 / 30.0</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
 
 
 
 
+  </main>
 
+  <script>let currentSlide = 0;
 
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
+    //  <!-- zjl revise here!!!!! -->
+    const slide_length = [0, 6, 10, 16, 20]
+    const slideContainer = document.getElementById('slider-container');
+    const slides = slideContainer.children;
+    const dots = document.querySelectorAll('#slider-dots button');
+    const totalSlides = slides.length;
+    function updateSlider(animate = true) {
+      const slideWidth = slides[0].offsetWidth + 16;
+      const offset = currentSlide * slideWidth;
 
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
+      if (animate) {
+        slideContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      } else {
+        slideContainer.style.transition = 'none';
+      }
 
+      slideContainer.style.transform = `translateX(-${offset}px)`;
 
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
+      dots.forEach((dot, index) => {
+        dot.style.backgroundColor = (slide_length[index] <= currentSlide & currentSlide < slide_length[index+1]) ? '#4F46E5' : '#D1D5DB';
+      });
+    }
+    function slideLeft() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlider();
+      } else {
+        // Optional: Bounce effect when at the start
+        slideContainer.style.transform = `translateX(20px)`;
+        setTimeout(() => {
+          slideContainer.style.transform = `translateX(0px)`;
+        }, 150);
+      }
+    }
+    function slideRight() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlider();
+      } else {
+        // Optional: Bounce effect when at the end
+        const maxOffset = (totalSlides - 1) * (slides[0].offsetWidth + 16);
+        slideContainer.style.transform = `translateX(-${maxOffset - 20}px)`;
+        setTimeout(() => {
+          slideContainer.style.transform = `translateX(-${maxOffset}px)`;
+        }, 150);
+      }
+    }
+    function handleTouchStart(e) {
+      const touch = e.touches[0];
+      window.touchStartX = touch.clientX;
+      window.touchStartY = touch.clientY;
+      slideContainer.style.transition = 'none';
+    }
+    function handleTouchMove(e) {
+      if (!window.touchStartX) return;
 
+      const touch = e.touches[0];
+      const diffX = touch.clientX - window.touchStartX;
+      const diffY = touch.clientY - window.touchStartY;
 
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
+      // If vertical scrolling is dominant, don't slide
+      if (Math.abs(diffY) > Math.abs(diffX)) return;
 
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+      e.preventDefault();
+      const slideWidth = slides[0].offsetWidth + 16;
+      const currentOffset = -(currentSlide * slideWidth);
+      const newOffset = currentOffset + diffX;
 
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+      slideContainer.style.transform = `translateX(${newOffset}px)`;
+    }
+    function handleTouchEnd(e) {
+      if (!window.touchStartX) return;
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+      const touch = e.changedTouches[0];
+      const diffX = touch.clientX - window.touchStartX;
 
-    <!-- End of Statcounter Code -->
+      if (Math.abs(diffX) > 50) {
+        if (diffX > 0 && currentSlide > 0) {
+          slideLeft();
+        } else if (diffX < 0 && currentSlide < totalSlides - 1) {
+          slideRight();
+        } else {
+          updateSlider();
+        }
+      } else {
+        updateSlider();
+      }
 
-  </body>
-  </html>
+      window.touchStartX = null;
+      window.touchStartY = null;
+    }
+    // Add touch events
+    slideContainer.addEventListener('touchstart', handleTouchStart);
+    slideContainer.addEventListener('touchmove', handleTouchMove);
+    slideContainer.addEventListener('touchend', handleTouchEnd);
+    // Add click event listeners to buttons
+    const leftButton = document.getElementById('id-88');
+    const rightButton = document.getElementById('id-90');
+    if (leftButton) leftButton.addEventListener('click', slideLeft);
+    if (rightButton) rightButton.addEventListener('click', slideRight);
+    // Add click events to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = slide_length[index];
+        updateSlider();
+      });
+    });
+    // Initialize slider
+    document.addEventListener('DOMContentLoaded', () => {
+      updateSlider(false);
+    });
+    // Update on window resize with debounce
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => updateSlider(false), 100);
+    });</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const videoContainers = document.querySelectorAll('.video-container');
+      const buttons = document.querySelectorAll('.video-switch-btn');
+      function showVideoGroup(groupNumber) { videoContainers.forEach(container => { if (container.classList.contains(`group-${groupNumber}`)) { container.style.display = 'block'; } else { container.style.display = 'none'; } }); buttons.forEach(btn => { if (btn.dataset.group === groupNumber.toString()) { btn.classList.add('bg-custom', 'text-white'); btn.classList.remove('bg-white'); } else { btn.classList.remove('bg-custom', 'text-white'); btn.classList.add('bg-white'); } }); } buttons.forEach(btn => { btn.addEventListener('click', () => { showVideoGroup(parseInt(btn.dataset.group)); }); }); showVideoGroup(1);
+    });</script>
