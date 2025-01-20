@@ -35,8 +35,7 @@ class AIRDataset(Dataset):
         
         # load image transform
         self.image_aug = transforms.Compose([
-            transforms.RandomResizedCrop((384, 384), scale=(0.7, 0.9), ratio=(1.0, 1.0), interpolation=InterpolationMode.BICUBIC),
-            transforms.RandomHorizontalFlip(p = 0.5),
+            transforms.RandomResizedCrop((384, 384), scale=(0.7, 1.0), ratio=(1.0, 1.0), interpolation=InterpolationMode.BICUBIC),
             transforms.ColorJitter(brightness=(0.8, 1.2), contrast=(0.8, 1.2), saturation=(0.8, 1.2), hue=0.05),
         ])
 
@@ -54,6 +53,8 @@ class AIRDataset(Dataset):
         buff = io.BytesIO(img_bytes)
         with Image.open(buff) as img: 
             img = img.convert('RGB')
+        
+        img = self.image_aug(img)
         if self.dataset_name == 'libero':  img = TF.vflip(img)
         return np.asarray(img)
 
