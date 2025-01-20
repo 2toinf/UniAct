@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ModularBot - Your Customizable Robot Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet" />
+    <script
+        src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000"
+        data-border-radius="small"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+</head>
+
+<body class="font-[Poppins] bg-gray-50">
+
+    <main>
+        <section class="py-16 bg-white">
+            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900">Project Gallery</h2>
+                    <p class="mt-4 text-lg text-gray-500">Explore our latest implementations</p>
+                </div>
+                <div class="flex justify-center gap-4 mb-8" id="gallery-controls"><button
+                        class="px-4 py-2 bg-custom text-white border border-custom rounded-md hover:bg-custom/90 font-medium active"
+                        onclick="switchGalleryContent(&#34;images&#34;)">Images</button><button
+                        class="px-4 py-2 bg-white border border-gray-300 rounded-md hover:bg-gray-50 text-gray-700 font-medium"
+                        onclick="switchGalleryContent(&#34;videos&#34;)">Videos</button><button
+                        class="px-4 py-2 bg-white border border-gray-300 rounded-md hover:bg-gray-50 text-gray-700 font-medium"
+                        onclick="switchGalleryContent(&#34;3d&#34;)">3D Models</button></div>
+                <div class="relative">
+                    <div class="overflow-hidden relative w-full">
+                        <div class="flex gap-4 transition-transform duration-500 ease-in-out transform w-full"
+                            id="slider-container"
+                            style="display: flex; gap: 1rem; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); touch-action: pan-y pinch-zoom;"
+                            data-current-type="images">
+                            <div class="min-w-[calc(33.333%-1rem)] flex-shrink-0">
+                                <div class="relative"><img src="https://ai-public.creatie.ai/gen_page/uniact_model.png"
+                                        class="w-full h-[300px] object-cover rounded-lg" alt="Project 1" />
+                                    <div
+                                        class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white rounded-b-lg">
+                                        <h3 class="text-lg font-semibold">Universal Action Space</h3>
+                                        <p class="text-sm">Our novel approach to unifying robot control</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="min-w-[calc(33.333%-1rem)] flex-shrink-0">
+                                <div class="relative"><img src="https://ai-public.creatie.ai/gen_page/uniact_model.png"
+                                        class="w-full h-[300px] object-cover rounded-lg" alt="Project 2" />
+                                    <div
+                                        class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white rounded-b-lg">
+                                        <h3 class="text-lg font-semibold">Cross-Domain Learning</h3>
+                                        <p class="text-sm">Enhanced data utilization across platforms</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="min-w-[calc(33.333%-1rem)] flex-shrink-0">
+                                <div class="relative"><img src="https://ai-public.creatie.ai/gen_page/uniact_model.png"
+                                        class="w-full h-[300px] object-cover rounded-lg" alt="Project 3" />
+                                    <div
+                                        class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white rounded-b-lg">
+                                        <h3 class="text-lg font-semibold">Generalization Capabilities</h3>
+                                        <p class="text-sm">Robust performance across configurations</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="min-w-[calc(33.333%-1rem)] flex-shrink-0">
+                                <div class="relative"><img src="https://ai-public.creatie.ai/gen_page/uniact_model.png"
+                                        class="w-full h-[300px] object-cover rounded-lg" alt="Project 4" />
+                                    <div
+                                        class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white rounded-b-lg">
+                                        <h3 class="text-lg font-semibold">More Embodiments</h3>
+                                        <p class="text-sm">More exciting robot embodiments upcoming</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><button
+                        class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100"
+                        onclick="slideLeft()"><i class="fas fa-chevron-left text-gray-600"></i></button><button
+                        class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100"
+                        onclick="slideRight()"><i class="fas fa-chevron-right text-gray-600"></i></button>
+                    <div class="flex justify-center mt-4 gap-2" id="slider-dots"><button
+                            class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400" data-slide="0"></button><button
+                            class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400" data-slide="1"></button><button
+                            class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400" data-slide="2"></button><button
+                            class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400" data-slide="3"></button></div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+    <script>let currentSlide = 0;
+        const slideContainer = document.getElementById(&#39; slider - container &#39;);
+        const slides = slideContainer.children;
+        const dots = document.querySelectorAll(&#39; #slider - dots button &#39;);
+        const totalSlides = slides.length;
+        const galleryContent = {
+            images: [
+                {
+                    src: &#39; https://ai-public.creatie.ai/gen_page/uniact_model.png&#39;, title: &#39;Universal Action Space&#39;, desc: &#39;Our novel approach to unifying robot control&#39; },
+                    {
+                        src: &#39; https://ai-public.creatie.ai/gen_page/uniact_model.png&#39;, title: &#39;Cross-Domain Learning&#39;, desc: &#39;Enhanced data utilization across platforms&#39; },
+                        {
+                            src: &#39; https://ai-public.creatie.ai/gen_page/uniact_model.png&#39;, title: &#39;Generalization Capabilities&#39;, desc: &#39;Robust performance across configurations&#39; },
+                                { src: &#39; https://ai-public.creatie.ai/gen_page/uniact_model.png&#39;, title: &#39;More Embodiments&#39;, desc: &#39;More exciting robot embodiments upcoming&#39; }
+  ],
+            videos: [
+                {
+                    src: &#39; https://ai-public.creatie.ai/gen_page/uniact_video1.mp4&#39;, title: &#39;Robot Demo 1&#39;, desc: &#39;Advanced manipulation tasks&#39; },
+                    {
+                        src: &#39; https://ai-public.creatie.ai/gen_page/uniact_video2.mp4&#39;, title: &#39;Robot Demo 2&#39;, desc: &#39;Complex interaction scenarios&#39; },
+                        {
+                            src: &#39; https://ai-public.creatie.ai/gen_page/uniact_video3.mp4&#39;, title: &#39;Robot Demo 3&#39;, desc: &#39;Multi-robot coordination&#39; },
+                                { src: &#39; https://ai-public.creatie.ai/gen_page/uniact_video4.mp4&#39;, title: &#39;Robot Demo 4&#39;, desc: &#39;Adaptive learning in action&#39; }
+  ],
+  &#39; 3d &#39;: [
+            {
+                src: &#39; https://ai-public.creatie.ai/gen_page/uniact_3d1.glb&#39;, title: &#39;3D Model 1&#39;, desc: &#39;Interactive robot visualization&#39; },
+                {
+                    src: &#39; https://ai-public.creatie.ai/gen_page/uniact_3d2.glb&#39;, title: &#39;3D Model 2&#39;, desc: &#39;Detailed component view&#39; },
+                    {
+                        src: &#39; https://ai-public.creatie.ai/gen_page/uniact_3d3.glb&#39;, title: &#39;3D Model 3&#39;, desc: &#39;Motion simulation&#39; },
+                            { src: &#39; https://ai-public.creatie.ai/gen_page/uniact_3d4.glb&#39;, title: &#39;3D Model 4&#39;, desc: &#39;Full system overview&#39; }
+  ]
+};
+        function switchGalleryContent(type) {
+            currentSlide = 0;
+            const contents = galleryContent[type];
+            slideContainer.innerHTML = &#39;&#39;;
+
+            contents.forEach((content, index) =& gt; {
+                const slideDiv = document.createElement(&#39; div &#39;);
+                slideDiv.className = &#39; min - w - [calc(33.333 % -1rem)] flex - shrink - 0 &#39;;
+
+                const wrapper = document.createElement(&#39; div &#39;);
+                wrapper.className = &#39; relative &#39;;
+
+                if (type === &#39; videos &#39;) {
+                    const video = document.createElement(&#39; video &#39;);
+                    video.src = content.src;
+                    video.className = &#39; w - full h - [300px] object - cover rounded - lg &#39;;
+                    video.controls = true;
+                    video.autoplay = false;
+                    video.loop = true;
+                    video.muted = true;
+                    video.playsInline = true;
+                    wrapper.appendChild(video);
+                } else if (type === &#39; 3d &#39;) {
+                    const model = document.createElement(&#39; model - viewer &#39;);
+                    model.src = content.src;
+                    model.className = &#39; w - full h - [300px] rounded - lg &#39;;
+                    model.setAttribute(&#39; auto - rotate &#39;, &#39;&#39;);
+                    model.setAttribute(&#39; camera - controls &#39;, &#39;&#39;);
+                    wrapper.appendChild(model);
+                } else {
+                    const img = document.createElement(&#39; img &#39;);
+                    img.src = content.src;
+                    img.className = &#39; w - full h - [300px] object - cover rounded - lg &#39;;
+                    img.alt = content.title;
+                    wrapper.appendChild(img);
+                }
+
+                const overlay = document.createElement(&#39; div &#39;);
+                overlay.className = &#39;absolute bottom - 0 left - 0 right - 0 bg - black bg - opacity - 50 p - 4 text - white rounded - b - lg &#39;;
+                overlay.innerHTML = `
+      &lt;h3 class=&#34;text-lg font-semibold&#34;&gt;${content.title}&lt;/h3&gt;
+      &lt;p class=&#34;text-sm&#34;&gt;${content.desc}&lt;/p&gt;
+    `;
+                wrapper.appendChild(overlay);
+
+                slideDiv.appendChild(wrapper);
+                slideContainer.appendChild(slideDiv);
+            });
+
+            document.querySelectorAll(&#39; #gallery - controls button &#39;).forEach(btn =& gt; {
+                btn.classList.remove(&#39; bg - custom &#39;, &#39; text - white &#39;, &#39; active &#39;);
+                btn.classList.add(&#39; bg - white &#39;, &#39; text - gray - 700 &#39;);
+            });
+
+            const activeBtn = document.querySelector(`#gallery-controls button[onclick*=&#34;&#39;${type}&#39;&#34;]`);
+            if (activeBtn) {
+                activeBtn.classList.remove(&#39; bg - white &#39;, &#39; text - gray - 700 &#39;);
+                activeBtn.classList.add(&#39; bg - custom &#39;, &#39; text - white &#39;, &#39; active &#39;);
+            }
+
+            updateSlider(false);
+        }
+        function updateSlider(animate = true) {
+            const slideWidth = slides[0].offsetWidth + 16;
+            const offset = currentSlide * slideWidth;
+
+            if (animate) {
+                slideContainer.style.transition = &#39;transform 0.5s cubic - bezier(0.4, 0, 0.2, 1) &#39;;
+            } else {
+                slideContainer.style.transition = &#39; none &#39;;
+            }
+
+            slideContainer.style.transform = `translateX(-${offset}px)`;
+
+            dots.forEach((dot, index) =& gt; {
+                dot.style.backgroundColor = index === currentSlide ? &#39;#4F46E5 &#39; : &#39; #D1D5DB &#39;;
+            });
+        }
+        function slideLeft() {
+            if (currentSlide & gt; 0) {
+                currentSlide--;
+                updateSlider();
+            } else {
+                slideContainer.style.transform = `translateX(20px)`;
+                setTimeout(() =& gt; {
+                    slideContainer.style.transform = `translateX(0px)`;
+                }, 150);
+            }
+        }
+        function slideRight() {
+            if (currentSlide & lt; totalSlides - 1) {
+                currentSlide++;
+                updateSlider();
+            } else {
+                const maxOffset = (totalSlides - 1) * (slides[0].offsetWidth + 16);
+                slideContainer.style.transform = `translateX(-${maxOffset - 20}px)`;
+                setTimeout(() =& gt; {
+                    slideContainer.style.transform = `translateX(-${maxOffset}px)`;
+                }, 150);
+            }
+        }
+        function handleTouchStart(e) {
+            const touch = e.touches[0];
+            window.touchStartX = touch.clientX;
+            window.touchStartY = touch.clientY;
+            slideContainer.style.transition = &#39; none &#39;;
+        }
+        function handleTouchMove(e) {
+            if (!window.touchStartX) return;
+
+            const touch = e.touches[0];
+            const diffX = touch.clientX - window.touchStartX;
+            const diffY = touch.clientY - window.touchStartY;
+
+            if (Math.abs(diffY) & gt; Math.abs(diffX)) return;
+
+            e.preventDefault();
+            const slideWidth = slides[0].offsetWidth + 16;
+            const currentOffset = -(currentSlide * slideWidth);
+            const newOffset = currentOffset + diffX;
+
+            slideContainer.style.transform = `translateX(${newOffset}px)`;
+        }
+        function handleTouchEnd(e) {
+            if (!window.touchStartX) return;
+
+            const touch = e.changedTouches[0];
+            const diffX = touch.clientX - window.touchStartX;
+
+            if (Math.abs(diffX) & gt; 50) {
+                if (diffX & gt; 0 & amp;& amp; currentSlide & gt; 0) {
+                    slideLeft();
+                } else if (diffX & lt; 0 & amp;& amp; currentSlide & lt; totalSlides - 1) {
+                    slideRight();
+                } else {
+                    updateSlider();
+                }
+            } else {
+                updateSlider();
+            }
+
+            window.touchStartX = null;
+            window.touchStartY = null;
+        }
+        slideContainer.addEventListener(&#39; touchstart &#39;, handleTouchStart);
+        slideContainer.addEventListener(&#39; touchmove &#39;, handleTouchMove);
+        slideContainer.addEventListener(&#39; touchend &#39;, handleTouchEnd);
+        const leftButton = document.querySelector(&#39; button[onclick =&#34; slideLeft() &#34;]&#39;);
+        const rightButton = document.querySelector(&#39; button[onclick =&#34; slideRight() &#34;]&#39;);
+        if (leftButton) leftButton.addEventListener(&#39; click &#39;, slideLeft);
+        if (rightButton) rightButton.addEventListener(&#39; click &#39;, slideRight);
+        dots.forEach((dot, index) =& gt; {
+            dot.addEventListener(&#39; click &#39;, () =& gt; {
+                currentSlide = index;
+                updateSlider();
+            });
+        });
+        document.addEventListener(&#39; DOMContentLoaded &#39;, () =& gt; {
+            updateSlider(false);
+        });
+        let resizeTimeout;
+        window.addEventListener(&#39; resize &#39;, () =& gt; {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() =& gt; updateSlider(false), 100);
+        });</script>
