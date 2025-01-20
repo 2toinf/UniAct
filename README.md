@@ -10,8 +10,8 @@ we introduce UniAct, a new embodied foundation modeling framework operating in t
 
 📆 TODO
 
-- [X] Release training code.
-- [X] Release training guidance.
+- [X] Release training codebase.
+- [ ] Release training guidance.
 - [ ] Release model checkpoints.
 - [ ] Release code for depolyment.
 
