@@ -3,17 +3,12 @@
 [[Project Page](https://2toinf.github.io/UniAct/)] [[Paper](https://arxiv.org/abs/2501.10105)]
 
 
-<center class="half">
-<img width="140" alt="seer" src="static/videos/widowx/1.gif"/><img width="140" alt="seer" src="static/videos/widowx/7.gif"/><img width="140" alt="seer" src="static/videos/widowx/6.gif"/><img width="140" alt="seer" src="static/videos/widowx/11.gif"/><img width="140" alt="seer" src="static/videos/widowx/4.gif"/>
-</center>
 
-<figure>
-<img width="140" alt="seer" src="static/videos/libero/1.gif"><img width="140" alt="seer" src="static/videos/libero/2.gif"><img width="140" alt="seer" src="static/videos/libero/3.gif"><img width="140" alt="seer" src="static/videos/libero/4.gif"><img width="140" alt="seer" src="static/videos/libero/5.gif">
-</figure>
-
-<figure>
-<img width="140" alt="seer" src="static/videos/airbot/1.gif"><img width="140" alt="seer" src="static/videos/airbot/2.gif"><img width="140" alt="seer" src="static/videos/airbot/3.gif"><img width="140" alt="seer" src="static/videos/airbot/4.gif"><img width="140" alt="seer" src="static/videos/airbot/4.gif">
-</figure>
+||||||
+|--|--|--|--|--|
+| <img width="140" alt="seer" src="static/videos/widowx/1.gif"/> | <img width="140" alt="seer" src="static/videos/widowx/7.gif"/> |<img width="140" alt="seer" src="static/videos/widowx/6.gif"/>|<img width="140" alt="seer" src="static/videos/widowx/11.gif"/> | <img width="140" alt="seer" src="static/videos/widowx/4.gif"/>|
+| <img width="140" alt="seer" src="static/videos/widowx/1.gif"/> | <img width="140" alt="seer" src="static/videos/widowx/7.gif"/> |<img width="140" alt="seer" src="static/videos/widowx/6.gif"/>|<img width="140" alt="seer" src="static/videos/widowx/11.gif"/> | <img width="140" alt="seer" src="static/videos/widowx/4.gif"/>|
+| <img width="140" alt="seer" src="static/videos/widowx/1.gif"/> | <img width="140" alt="seer" src="static/videos/widowx/7.gif"/> |<img width="140" alt="seer" src="static/videos/widowx/6.gif"/>|<img width="140" alt="seer" src="static/videos/widowx/11.gif"/> | <img width="140" alt="seer" src="static/videos/widowx/4.gif"/>|
 
 📆 TODO
 
