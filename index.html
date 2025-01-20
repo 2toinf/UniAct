@@ -1,312 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>ModularBot - Your Customizable Robot Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet">    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
 </head>
-<body>
-
-
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+<body class="font-[Poppins] bg-gray-50">
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">                        <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="ModularBot">                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="border-custom text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Features</a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Specifications</a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button class="!rounded-button bg-custom text-white px-4 py-2 text-sm font-medium hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom">Get Started</button>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </nav>
 
+    <main>
+        <section class="relative bg-white overflow-hidden">            <div class="max-w-8xl mx-auto">
+                <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:pb-28 lg:w-full">                    <div class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6">
+                        <div class="text-center">                            <h1 class="text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">
+                                <span class="block">Meet Your New</span>
+                                <span class="block text-custom">Multi-Talented Assistant</span>
+                            </h1>                            <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">                                The world's first modular robot with interchangeable arms. Customize your robot assistant to handle any task with precision and ease.
+                            </p>                            <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+                                <div class="rounded-md shadow">                                    <button class="!rounded-button w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-white bg-custom hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">                                        Configure Robot
+                                    </button>
+                                </div>                                <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                                    <button class="!rounded-button w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-custom bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">                                        Watch Demo
+                                    </button>
+                                </div>                            </div>
+                        </div>
+                    </div>
+                    <div class="relative w-full h-64 sm:h-72 md:h-96 lg:h-[32rem]">                        <img src="https://creatie.ai/ai/api/search-image?query=A 3D vector-style image with a clean, solid background color that contrasts significantly with the main theme. The content includes a cute, friendly robot character with multiple modular arms in different positions, showcasing various functions. The robot has a modern, sleek design with rounded edges and is rendered in soft, pastel colors. The overall style is minimalist and appealing&width=800&height=600&orientation=landscape&removebg=true&flag=01d938b6-8352-4d79-ac3f-99a8fd29ab4c" alt="ModularBot Hero" class="absolute inset-0 w-full h-full object-contain">                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
+        <section class="py-16 bg-gray-50">            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">Versatile Arm Types</h2>
+                    <p class="mt-4 text-lg text-gray-500">Choose from our selection of specialized arms for any task</p>                </div>
+                <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">                        <div class="p-6">
+                            <div class="h-48 bg-gray-100 rounded-lg overflow-hidden">
+                                <img src="https://creatie.ai/ai/api/search-image?query=A detailed 3D rendering of a robotic grabber arm with mechanical claws and joints, shown against a clean white background. The arm features smooth, modern design elements with hints of chrome and matte finish. The lighting emphasizes the technical details and functionality&width=400&height=300&orientation=squarish&flag=d2bacbd6-97e0-47ad-be78-6acb52d4c5c3" alt="Grabber Arm" class="w-full h-full object-cover">                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">Grabber Arm</h3>                            <p class="mt-2 text-sm text-gray-500">Perfect for picking up and moving objects with precision</p>
+                        </div>                    </div>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="p-6">                            <div class="h-48 bg-gray-100 rounded-lg overflow-hidden">
+                                <img src="https://creatie.ai/ai/api/search-image?query=A 3D visualization of a sleek robotic precision arm with fine-tuned articulation points and delicate tools at the end, displayed against a clean white background. The arm incorporates advanced sensors and micro-adjustment mechanisms, rendered with attention to detail&width=400&height=300&orientation=squarish&flag=0e227a3f-7187-4425-957b-68dce0dfff7b" alt="Precision Arm" class="w-full h-full object-cover">                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">Precision Arm</h3>                            <p class="mt-2 text-sm text-gray-500">Designed for detailed work requiring high accuracy</p>
+                        </div>                    </div>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="p-6">                            <div class="h-48 bg-gray-100 rounded-lg overflow-hidden">
+                                <img src="https://creatie.ai/ai/api/search-image?query=A 3D model of an extendable robotic arm with telescopic segments and flexible joints, shown against a clean white background. The arm demonstrates its ability to reach and stretch, with smooth mechanical elements and modern design features&width=400&height=300&orientation=squarish&flag=9f42fdb1-725a-475a-95d6-7c477fc8b95c" alt="Extendable Arm" class="w-full h-full object-cover">                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">Extendable Arm</h3>                            <p class="mt-2 text-sm text-gray-500">Reach further with telescopic extension capabilities</p>
+                        </div>                    </div>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                        <div class="p-6">                            <div class="h-48 bg-gray-100 rounded-lg overflow-hidden">
+                                <img src="https://creatie.ai/ai/api/search-image?query=A 3D rendering of a versatile multi-tool robotic arm featuring various attachments and tools, displayed against a clean white background. The arm showcases multiple integrated tools that can rotate and switch, with a modern and efficient design&width=400&height=300&orientation=squarish&flag=e587f5b2-291a-48ba-b6a4-dd45ff9091b4" alt="Multi-tool Arm" class="w-full h-full object-cover">                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">Multi-tool Arm</h3>                            <p class="mt-2 text-sm text-gray-500">Swiss Army knife of robot arms with multiple tools</p>
+                        </div>                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+        <section class="py-16 bg-white">            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">Key Features</h2>
+                    <p class="mt-4 text-lg text-gray-500">Designed for versatility and ease of use</p>
+                </div>                <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="relative bg-white p-6 rounded-lg shadow-sm">                        <div class="text-custom text-2xl mb-4">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>                        <h3 class="text-lg font-medium text-gray-900">Universal Compatibility</h3>
+                        <p class="mt-2 text-sm text-gray-500">All arms are designed to work seamlessly with the base unit</p>
+                    </div>
+                    <div class="relative bg-white p-6 rounded-lg shadow-sm">                        <div class="text-custom text-2xl mb-4">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>                        <h3 class="text-lg font-medium text-gray-900">Quick Swap System</h3>
+                        <p class="mt-2 text-sm text-gray-500">Change arms in seconds with our patented connection system</p>
+                    </div>
+                    <div class="relative bg-white p-6 rounded-lg shadow-sm">                        <div class="text-custom text-2xl mb-4">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>                        <h3 class="text-lg font-medium text-gray-900">Advanced Safety</h3>
+                        <p class="mt-2 text-sm text-gray-500">Built-in sensors and failsafes for secure operation</p>
+                    </div>
+                </div>
+            </div>
+        </section>        <section class="py-16 bg-gray-50">
+            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Technical Specifications</h2>
+                        <p class="mt-4 text-lg text-gray-500">Everything you need to know about ModularBot</p>
+                        <div class="mt-8 space-y-6">
+                            <div class="flex">                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-custom text-white">                                        <i class="fas fa-ruler"></i>
+                                    </div>
+                                </div>                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Dimensions</h3>
+                                    <p class="mt-2 text-sm text-gray-500">Height: 60cm<br>Width: 40cm<br>Depth: 40cm</p>                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0">                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-custom text-white">
+                                        <i class="fas fa-weight"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">                                    <h3 class="text-lg font-medium text-gray-900">Weight</h3>
+                                    <p class="mt-2 text-sm text-gray-500">Base Unit: 8kg<br>Arms: 0.8-1.2kg each</p>
+                                </div>
+                            </div>
+                            <div class="flex">                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-custom text-white">                                        <i class="fas fa-plug"></i>
+                                    </div>
+                                </div>                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Power</h3>
+                                    <p class="mt-2 text-sm text-gray-500">Battery: 48V Lithium-ion<br>Runtime: 8 hours</p>                                </div>
+                            </div>
+                        </div>
+                    </div>                    <div class="mt-10 lg:mt-0">
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">                            <img src="https://creatie.ai/ai/api/search-image?query=A detailed technical diagram or blueprint style 3D rendering of a modular robot with multiple attachment points and specifications clearly visible. The image shows the robot from multiple angles with measurement lines and technical annotations, rendered in a clean, professional style&width=600&height=400&orientation=landscape&flag=6acff881-6ab7-476d-abe5-095415e8eb7d" alt="Technical Specifications" class="w-full h-full object-cover">                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="bg-custom py-16">            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-white">Ready to Get Started?</h2>
+                    <p class="mt-4 text-lg text-indigo-100">Configure your perfect robot assistant today</p>                    <div class="mt-8 flex justify-center space-x-4">
+                        <button class="!rounded-button bg-white text-custom px-8 py-3 text-base font-medium hover:bg-gray-50">                            Configure Now
+                        </button>
+                        <button class="!rounded-button bg-indigo-600 text-white px-8 py-3 text-base font-medium hover:bg-indigo-700">                            Get Quote
+                        </button>
+                    </div>
+                </div>
+            </div>        </section>
+    </main>
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+    <footer class="bg-white">
+        <div class="max-w-8xl mx-auto py-12 px-4 sm:px-6 lg:px-8">            <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Product</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Features</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Specifications</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Pricing</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Documentation</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Guides</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">API Status</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Privacy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Terms</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Patent</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8">                <p class="text-base text-gray-400 text-center">&copy; 2024 ModularBot, Inc. All rights reserved.</p>
+            </div>        </div>
+    </footer>
+</body>
+</html>
