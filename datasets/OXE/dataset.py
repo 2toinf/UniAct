@@ -14,15 +14,10 @@ from functools import partial
 import os
 import numpy as np
 
-os.environ['AWS_ACCESS_KEY_ID'] = 'P23QN96R08I1YOIVNNV3'           
-os.environ['AWS_SECRET_ACCESS_KEY'] = '0HxxzVxFyDRGIRBUfoYVORK6tE537yVU5aZxhVK8'           
-os.environ['S3_ENDPOINT'] = 'http://10.140.14.204:80'
-os.environ['S3_USE_HTTPS'] = '0'
-os.environ['S3_VERIFY_SSL'] = '0'
 
 LLAVAOV_PREPROCESSOR = LlavaOnevisionProcessor.from_pretrained("llava-hf/llava-onevision-qwen2-0.5b-ov-hf",local_files_only = True)
-S3Path = "s3://real_data_raw/open_x_embodiment_origin/"
-LOCAL_OXE = '/mnt/hwfile/OpenRobotLab/robot_data/open_x_embodiment_origin_re/'
+S3Path = ""
+LOCAL_OXE = ""
 
 def traj_standarize(traj, 
                     dataset_name, 

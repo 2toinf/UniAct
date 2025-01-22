@@ -1,8 +1,8 @@
 
 AIRDATA_CONFIG = {
     'libero': {
-        'image_path': '/mnt/petrelfs/zhengjinliang/Data/libero/images',
-        'meta_path': '/mnt/petrelfs/zhengjinliang/Data/libero/libero.pkl',
+        'image_path': '',
+        'meta_path': '',
         'image': {'primary': 'image0'},
         'img_prefix': "",
         'img_suffix': '.jpg',
@@ -18,8 +18,8 @@ AIRDATA_CONFIG = {
         }
     },
     'AirKitchen': {
-        'image_path': '/mnt/petrelfs/zhengjinliang/Data/AirKitchen/images',
-        'meta_path': '/mnt/petrelfs/zhengjinliang/Data/AirKitchen/AirKitchen.pkl',
+        'image_path': '',
+        'meta_path': '',
         'image': {'primary': 'images0'},
         'img_prefix': "im_",
         'img_suffix': '.jpg',
