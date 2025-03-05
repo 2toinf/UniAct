@@ -10,34 +10,33 @@ from typing import Dict, List, Tuple
 # fmt: off
 OXE_NAMED_MIXTURES: Dict[str, List[Tuple[str, float]]] = {
     
-    'UniAct-v1':[
-        ("fractal20220817_data", 0.54087122203),                # Google RT-1 Robot Data (Large-Scale)
-        #("kuka", 0.8341046294),
-        # ("bridge_oxe", 1.0)                                   # Version of Bridge V2 in Open-X GCP Bucket
-        ("bridge_dataset", 2.0),                                   # Original Version of Bridge V2 from Project Website
-        ("taco_play", 2.0),
-        # ("jaco_play", 1.0),
-        # ("berkeley_cable_routing", 1.0),
-        ("roboturk", 2.0),
-        # # ("nyu_door_opening_surprising_effectiveness", 1.0),   # Note --> only contains wrist camera images (skip?)
-        ("viola", 2.0),
-        ("berkeley_autolab_ur5", 2.0),
-        # ("toto", 1.0),
-        # ("language_table", 0.1),
+    'UniAct-1.0':[
+        ("utaustin_mutex", 1.0),
+        ("berkeley_cable_routing", 0.2),
+        ("nyu_franka_play_dataset_converted_externally_to_rlds", 1.0),
+        ("kuka", 12.7),  
+        ("austin_sailor_dataset_converted_externally_to_rlds", 2.2),
+        ("fmb_dataset", 1.0),
+        ("berkeley_autolab_ur5", 1.2),
+        ("viola", 0.9),
+        ("dobbe", 1.4),
+        ("iamlab_cmu_pickup_insert_converted_externally_to_rlds", 0.9),
+        ("austin_buds_dataset_converted_externally_to_rlds", 0.2),
+        ("language_table", 4.4),
         ("stanford_hydra_dataset_converted_externally_to_rlds", 2.0),
-        # ("austin_buds_dataset_converted_externally_to_rlds", 1.0),
-        ("nyu_franka_play_dataset_converted_externally_to_rlds", 3.0),
-        # ("furniture_bench_dataset_converted_externally_to_rlds", 0.1),
-        ("ucsd_kitchen_dataset_converted_externally_to_rlds", 2.0),
-        # ("austin_sailor_dataset_converted_externally_to_rlds", 1.0),
-        # ("austin_sirius_dataset_converted_externally_to_rlds", 1.0),
-        # # ("bc_z", 0.2),                                        # Note --> raw data is broken!
-        # ("dlr_edan_shared_control_converted_externally_to_rlds", 1.0),
-        # ("iamlab_cmu_pickup_insert_converted_externally_to_rlds", 1.0),
-        # # ("uiuc_d3field", 1.0),                                # Note --> raw data is broken!
-        # ("utaustin_mutex", 1.0),
-        ("berkeley_fanuc_manipulation", 2.0),
-        # ("cmu_stretch", 1.0),
+        ("austin_sirius_dataset_converted_externally_to_rlds", 1.7),
+        ("dlr_edan_shared_control_converted_externally_to_rlds", 0.1),
+        ("fractal20220817_data", 12.7),
+        ("toto", 2.0),
+        ("berkeley_fanuc_manipulation", 0.7),
+        ("cmu_stretch", 0.2),
+        ("roboturk", 2.3),
+        ("taco_play", 3.0),
+        ("jaco_play", 0.4),
+        ("bc_z", 7.5),
+        ("droid", 10.0),
+        ("furniture_bench_dataset_converted_externally_to_rlds", 2.4),
+        ("bridge_dataset", 13.3),                                 
     ],
     
     

@@ -1,0 +1,2 @@
+transformers==4.47.1
+timm==1.0.12

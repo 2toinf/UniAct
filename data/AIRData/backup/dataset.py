@@ -1,5 +1,4 @@
 
-from transformers import LlavaOnevisionProcessor
 import torch
 import numpy as np
 import io
@@ -10,9 +9,10 @@ import torchvision.transforms.functional as TF
 from torchvision.transforms import InterpolationMode
 import pickle
 from torch.utils.data import Dataset, DataLoader
-from datasets.AIRData.config import AIRDATA_CONFIG
-from datasets.AIRData.mixture import AIR_NAMED_MIXTURES
-LLAVAOV_PREPROCESSOR = LlavaOnevisionProcessor.from_pretrained("llava-hf/llava-onevision-qwen2-0.5b-ov-hf",local_files_only = True)
+from data.AIRData.config import AIRDATA_CONFIG
+from data.AIRData.mixture import AIR_NAMED_MIXTURES
+from data.utils import LLAVAOV_PREPROCESSOR, R18_PREPROCESSOR
+
 
 class AIRDataset(Dataset):
     def __init__(self, dataset_name, action_chunk_length=1, action_normalize_way = 'min_max_99'):
@@ -46,7 +46,7 @@ class AIRDataset(Dataset):
         img_path = fileio.join_path(
             self.config['image_path'], 
             self.metas[traj_id]['path'], 
-            self.config['image']['primary'],
+            self.config['image'][0],
             f"{self.config['img_prefix']}{step_id}{self.config['img_suffix']}")
         value = fileio.get(img_path)
         img_bytes = np.frombuffer(value, np.uint8)
@@ -55,7 +55,9 @@ class AIRDataset(Dataset):
             img = img.convert('RGB')
         
         img = self.image_aug(img)
-        if self.dataset_name == 'libero':  img = TF.vflip(img)
+        if self.dataset_name == 'libero':  
+            img = TF.vflip(img)
+            img = TF.hflip(img)
         return np.asarray(img)
 
     def _get_action(self, traj_id, step_id):
@@ -75,6 +77,8 @@ class AIRDataset(Dataset):
         if self.action_normalize_way == 'min_max_99':
             action = (action - self.config['action_statics']['1min']) / \
                 (self.config['action_statics']['99max'] - self.config['action_statics']['1min'] + 1e-6)
+        elif self.action_normalize_way == 'mean_std':
+            action = (action - self.config['action_statics']['mean']) / self.config['action_statics']['std']
         else:
             raise NotImplementedError
         
@@ -83,6 +87,7 @@ class AIRDataset(Dataset):
 
     def __getitem__(self, index):
         traj_id, step_id = self.id_list[index]
+        
         return {
             'instruction': self.metas[traj_id]['instruction'],
             'image': self._get_single_img(traj_id, step_id),
@@ -103,6 +108,7 @@ def collate_fn(batch):
     inputs = LLAVAOV_PREPROCESSOR(videos=video, text=text, return_tensors="pt", padding=True)
     return  {
         'inputs': inputs,
+        'images': torch.stack([R18_PREPROCESSOR(Image.fromarray(meta['image'])) for meta in batch]).unsqueeze(1),
         'action': torch.stack([item['action'] for item in batch]),
         'action_mask': torch.stack([item['action_mask'] for item in batch])
     }
@@ -121,7 +127,7 @@ def infinite_shuffled_iterator(dataset_name, action_chunk_length=4, batch_size=2
             
 def create_AIR_datasets(batch_size,
                         action_chunk_length,
-                        use_recipe='uniact-1.0version', **kwargs):
+                        use_recipe='uniact-1.0-cube', **kwargs):
     sample_weight_dict = {}
     dataloader_dict = {}
     for dataset_name, weight in AIR_NAMED_MIXTURES[use_recipe]:

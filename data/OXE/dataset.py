@@ -1,7 +1,7 @@
-from datasets.OXE.transforms import OXE_STANDARDIZATION_TRANSFORMS, chunk_act_obs
-from datasets.OXE.configs import OXE_DATASET_CONFIGS
-from datasets.OXE.mixture import OXE_NAMED_MIXTURES
-from datasets.OXE.action_statics import OXE_ACTION_STATICS
+from data.OXE.transforms import OXE_STANDARDIZATION_TRANSFORMS, chunk_act_obs
+from data.OXE.configs import OXE_DATASET_CONFIGS
+from data.OXE.mixture import OXE_NAMED_MIXTURES
+from data.OXE.action_statics import OXE_ACTION_STATICS
 import tensorflow_io as tfio # MUST import to enable file system support.
 import tensorflow as tf
 import tensorflow_datasets as tfds
@@ -9,15 +9,16 @@ import dlimp as dl
 from torch.utils.data import IterableDataset,DataLoader
 import torch
 from transformers.feature_extraction_sequence_utils import BatchFeature
-from transformers import LlavaOnevisionProcessor
 from functools import partial
 import os
 import numpy as np
+from PIL import Image
+from data.utils import LLAVAOV_PREPROCESSOR, R18_PREPROCESSOR
+from transformers.feature_extraction_utils import BatchFeature
 
-
-LLAVAOV_PREPROCESSOR = LlavaOnevisionProcessor.from_pretrained("llava-hf/llava-onevision-qwen2-0.5b-ov-hf",local_files_only = True)
-S3Path = ""
-LOCAL_OXE = ""
+# NOTE: need to be filled
+S3Path = ''
+LOCAL_OXE = ''
 
 def traj_standarize(traj, 
                     dataset_name, 
@@ -34,7 +35,7 @@ def traj_standarize(traj,
 def frame_standarize_with_img_aug(frame, statics, method):
     # image augmentation
     augment_kwargs = dict(
-                random_resized_crop=dict(scale=[0.7, 0.9], ratio=[1.0, 1.0]),
+                random_resized_crop=dict(scale=[0.7, 1.0], ratio=[1.0, 1.0]),
                 random_brightness=[0.2],
                 random_contrast=[0.8, 1.2],
                 random_saturation=[0.8, 1.2],
@@ -60,6 +61,8 @@ def frame_standarize_with_img_aug(frame, statics, method):
     if method == 'min_max_99':
         frame['action'] = (tf.cast(frame['action'], tf.float32) - statics['1min']) / \
                         (statics['99max'] - statics['1min'] + 1e-6)
+    elif method == 'mean_std':
+            (tf.cast(frame['action'], tf.float32) - statics['mean']) / statics['std']
     else:
         raise NotImplementedError
     
@@ -127,17 +130,13 @@ def collate_fn(batch):
     inputs = LLAVAOV_PREPROCESSOR(videos=video, text=text, return_tensors="pt", padding=True)
     return  {
         'inputs': inputs,
+        'images': torch.stack([R18_PREPROCESSOR(Image.fromarray(meta['image'])) for meta in batch]).unsqueeze(1),
         'action': torch.stack([item['action'] for item in batch]),
         'action_mask': torch.stack([item['action_mask'] for item in batch])
     }
 
-def infinite_shuffled_iterator(dataset_name, action_chunk_length=4, batch_size=2):
-    dataloader = DataLoader(OXEDataset(dataset_name,
-                                            action_chunk_length=action_chunk_length),
-                                            batch_size=batch_size, 
-                                            num_workers=0, 
-                                            pin_memory=True, 
-                                            collate_fn=collate_fn)
+def infinite_shuffled_iterator(dataloader):
+    
     while True:
         for item in dataloader:
             yield item
@@ -149,9 +148,15 @@ def create_OXE_datasets(
         **kwargs):
     sample_weight_dict = {}
     dataloader_dict = {}
+    if use_recipe not in OXE_NAMED_MIXTURES.keys():
+        return sample_weight_dict, dataloader_dict
     for dataset_name, weight in OXE_NAMED_MIXTURES[use_recipe]:
         sample_weight_dict[dataset_name] = weight
-        dataloader_dict[dataset_name] = infinite_shuffled_iterator(dataset_name,
-                                                   batch_size=batch_size,
-                                                   action_chunk_length=action_chunk_length)
+        dataloader = DataLoader(OXEDataset(dataset_name,
+                                            action_chunk_length=action_chunk_length),
+                                            batch_size=batch_size, 
+                                            num_workers=0, 
+                                            pin_memory=True, 
+                                            collate_fn=collate_fn)
+        dataloader_dict[dataset_name] = infinite_shuffled_iterator(dataloader)
     return sample_weight_dict, dataloader_dict

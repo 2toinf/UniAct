@@ -1,5 +1,4 @@
 import warnings
-warnings.filterwarnings("ignore")
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 import tensorflow as tf
@@ -7,11 +6,10 @@ tf.config.set_visible_devices(devices=[], device_type='GPU')
 
 import numpy as np
 import torch
-import torch.backends.cudnn as cudnn
-import models.UniAct
+import models.UniAct_V1
 from utils import MultiDataIterMetricLogger
-from datasets.OXE.dataset import create_OXE_datasets
-from datasets.AIRData.dataset import create_AIR_datasets
+from data.OXE.dataset import create_OXE_datasets
+from data.AIRData.multi_view_dataset import create_air_datasets
 from pathlib import Path
 from tensorboardX import SummaryWriter
 import datetime
@@ -30,7 +28,9 @@ def get_args_parser():
     parser = argparse.ArgumentParser('training script', add_help=False)
     
     # Base Settings
-    parser.add_argument('--model', default="UniAct_05B_CodeBook_256", type=str)
+    
+    parser.add_argument('--recipe', default='UniAct-1.0', type=str)
+    parser.add_argument('--model', default="UniAct_05B_CodeBook_256_V1", type=str)
     parser.add_argument('--batch-size', default=2, type=int)
     parser.add_argument('--grad_accumulation_steps', default=1, type=int)
     parser.add_argument('--iters', default=1e6, type=int)
@@ -39,7 +39,7 @@ def get_args_parser():
     
     # Optimizer parameters
     parser.add_argument('--precision', default="bf16")
-    parser.add_argument("--weight_decay", default=0.01, type=float)
+    parser.add_argument("--weight_decay", default=0., type=float)
     parser.add_argument("--beta1", default=0.9, type=float)
     parser.add_argument("--beta2", default=0.95, type=float)
     
@@ -89,7 +89,8 @@ def main(args):
     np.random.seed(seed)
     random.seed(seed)
     tf.random.set_seed(seed)
-    cudnn.benchmark = True
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
 
     print('========== init model and dataset ==========')
     model = create_model(args.model,
@@ -100,9 +101,11 @@ def main(args):
 
     if args.resume:
         ckpt = torch.load(args.resume, map_location="cpu")
+        if 'module' in ckpt.keys():
+            ckpt = ckpt['module']
         new_state_dict = {}
         model_state_dict = model.state_dict()
-        for key, value in ckpt['module'].items():
+        for key, value in ckpt.items():
             if key not in model_state_dict: continue
             if model_state_dict[key].shape != value.shape: continue
             new_state_dict[key] = value
@@ -113,28 +116,31 @@ def main(args):
     ### init OXE dataset
     oxe_sample_weight_dict, oxe_dataloader_dict = create_OXE_datasets(
                 batch_size=args.batch_size, 
-                action_chunk_length=4)
-    
+                action_chunk_length=4,
+                use_recipe=args.recipe)
+    print(oxe_sample_weight_dict.keys())
     print("==========OXE dataset initialized==========")
     
     ### init AIR dataset
-    air_sample_weight_dict, air_dataloader_dict = create_AIR_datasets(
+    air_sample_weight_dict, air_dataloader_dict = create_air_datasets(
+                num_tasks = args.world_size,
+                global_rank = args.rank,
                 batch_size=args.batch_size, 
-                action_chunk_length=4)
-    
+                action_chunk_length=4,
+                use_recipe=args.recipe)
+    print(air_sample_weight_dict.keys())
     print("==========AIR dataset initialized==========")
     
     
-    sample_weight_dict = {**oxe_sample_weight_dict, **air_sample_weight_dict}
-    dataloader_dict = {**oxe_dataloader_dict, **air_dataloader_dict}
-    
-    
+    sample_weight_dict = {**air_sample_weight_dict, **oxe_sample_weight_dict}
+    dataloader_dict = {**air_dataloader_dict, **oxe_dataloader_dict}
+
     
     ds_config = {
         "train_micro_batch_size_per_gpu": args.batch_size,
         "gradient_accumulation_steps": args.grad_accumulation_steps,
         "optimizer": {
-            "type": "AdamW",
+            "type": "Adam",
             "params": {
                 "lr": args.lr,
                 "weight_decay": args.weight_decay,
@@ -160,7 +166,6 @@ def main(args):
         config=ds_config
     )
 
-    
 
     print(f"========== iters start from {args.start_iters} ==========")
     start_time = time.time()
@@ -168,10 +173,15 @@ def main(args):
     metric_logger = MultiDataIterMetricLogger(delimiter="  ")
     model_engine.train()
     for batch, domain_name in metric_logger.log_every(args.iters, sample_weight_dict, dataloader_dict, 10):
-        inputs = {'inputs': batch['inputs'].to('cuda',torch.bfloat16), 
-                'action': batch['action'],
-                'action_mask': batch['action_mask']}
-                
+        
+        inputs = {'inputs': batch['inputs'].to('cuda', torch.bfloat16, non_blocking=True), 
+                'images': batch['images'].to('cuda', torch.bfloat16, non_blocking=True),
+                'action': batch['action'].to('cuda', torch.bfloat16, non_blocking=True),
+                'action_mask': batch['action_mask'].to('cuda', torch.bfloat16, non_blocking=True)}
+        
+        if 'proprios' in batch.keys():
+            inputs['proprios'] = batch['proprios'].to('cuda', torch.bfloat16, non_blocking=True)
+        
         loss, outputs = model_engine(domain_name=domain_name, 
                             log_file = os.path.join(output_dir, 'code.log'), 
                             **inputs)
@@ -179,8 +189,7 @@ def main(args):
         model_engine.step()
 
         metric_logger.update(**outputs)
-        # try: metric_logger.update(lr=model_engine.lr_scheduler.get_last_lr()[0])
-        # except: pass
+
         if tb_logger is not None and deepspeed.dist.get_rank() == 0 and global_idx % 50 == 0:
             for k, meter in metric_logger.meters.items():
                 tb_logger.add_scalar('train/{}_val'.format(k), meter.value, global_idx)
