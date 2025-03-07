@@ -136,23 +136,12 @@ pred_action = uniact_model.infer(
 Please follow the guide in the official repo to install the [LIBERO simulation](https://github.com/Lifelong-Robot-Learning/LIBERO).
 
 ### Reproduce the results
-1. **LIBERO (MLP Head)**
+**LIBERO (MLP Head)**
 
 You can directly run the following command by replacing `YOUR_BASEMODEL_CKPT_PATH` and `YOUR_HEAD_CKPT_PATH` as your base model and head ckpt pathes, e.g., `/data/UniAct/basemodel.pt` and `/data/UniAct/libero_mlp.pt`:
 
 ```
 python eval/libero/run_uniact_libero_eval.py \
-    --base_path YOUR_BASEMODEL_CKPT_PATH \
-    --head_path YOUR_HEAD_CKPT_PATH \
-    --num_episodes 20 \
-```
-
-1. **LIBERO (ACT Head)**
-
-You can directly run the following command by replacing `YOUR_BASEMODEL_CKPT_PATH` and `YOUR_HEAD_CKPT_PATH` as your base model and head ckpt pathes, e.g., `/data/UniAct/basemodel.pt` and `/data/UniAct/ACT_Libero.pt`:
-
-```
-python eval/acthead_libero/run_uniact_libero_eval.py \
     --base_path YOUR_BASEMODEL_CKPT_PATH \
     --head_path YOUR_HEAD_CKPT_PATH \
     --num_episodes 20 \
