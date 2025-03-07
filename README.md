@@ -158,8 +158,6 @@ python eval/acthead_libero/run_uniact_libero_eval.py \
     --num_episodes 20 \
 ```
 
-#### 1. Prepare the Data
-
 ## Training Guidance
 
 Firstly install the required packages for training, kindly refer to [train/requirements.txt](train/requirements.txt)
