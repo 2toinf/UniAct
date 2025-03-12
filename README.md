@@ -1,7 +1,7 @@
 # [CVPR 2025] Universal Actions for Enhanced Embodied Foundation Models
 [[Project Page](https://2toinf.github.io/UniAct/)] [[Paper](https://arxiv.org/abs/2501.10105)]
 
-[Jinliang Zheng](https://2toinf.github.io/)\*, [Jianxiong Li](https://Facebear-ljx.github.io/)\*, Dongxiu Liu\*,  [Yinan Zheng](https://zhengyinan-air.github.io/), [Zhihao Wang](https://zh1hao.wang/Robo_MUTUAL/), Zhonghong Ou, [Yu Liu](https://liuyu.us/), [Jingjing Liu](https://air.tsinghua.edu.cn/en/info/1046/1194.htm), [Ya-Qin Zhang](https://air.tsinghua.edu.cn/en/info/1046/1188.htm), [Xianyuan Zhan](https://zhanzxy5.github.io/zhanxianyuan/), 
+[Jinliang Zheng](https://2toinf.github.io/)\*, [Jianxiong Li](https://Facebear-ljx.github.io/)\*, [Dongxiu Liu](https://scholar.google.com/citations?hl=en&user=QbZB7QUAAAAJ)\*,  [Yinan Zheng](https://zhengyinan-air.github.io/), [Zhihao Wang](https://zh1hao.wang/Robo_MUTUAL/), Zhonghong Ou, [Yu Liu](https://liuyu.us/), [Jingjing Liu](https://air.tsinghua.edu.cn/en/info/1046/1194.htm), [Ya-Qin Zhang](https://air.tsinghua.edu.cn/en/info/1046/1188.htm), [Xianyuan Zhan](https://zhanzxy5.github.io/zhanxianyuan/), 
 
 
 ||||||
