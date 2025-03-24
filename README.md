@@ -43,8 +43,8 @@ Please note that the following guidance is only for model deployment, please kin
 ### Install Package and Requirements
 
 ```bash
-git clone https://github.com/2toinf/UniAct-Preview.git
-cd UniAct-Preview
+git clone https://github.com/2toinf/UniAct.git
+cd UniAct
 pip install -r requirements.txt
 ```
 
