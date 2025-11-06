@@ -176,7 +176,7 @@ Currently support decoders:
 #### 3. Run the following script
 
 ```bash
-srun -p mozi-S1 -n8  --gres=gpu:8  --ntasks-per-node=8 \
+srun -N8 \
     python -u train/slurm_deepspeed_train.py \
         --model UniAct_05B_CodeBook_256_V1_Pretrain \
         --recipe oxe_magic_soup \
@@ -253,7 +253,7 @@ Please choose one decoder head for your embodiment and revise the file, currentl
 #### Run the following script
 
 ```bash
-srun -p mozi-S1 -n8  --gres=gpu:8  --ntasks-per-node=8   \
+srun -N8  \
     python -u slurm_deepspeed_train.py \
         --model UniAct_05B_CodeBook_256_V1_For_Fast_Adaptation \
         --recipe ACT-Libero \
